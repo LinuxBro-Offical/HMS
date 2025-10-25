@@ -16,7 +16,7 @@ import { login, clearError } from '../../store/slices/authSlice';
 import { toast } from 'react-toastify';
 
 const Login: React.FC = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ const Login: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await dispatch(login({ username, password })).unwrap();
+      await dispatch(login({ email, password })).unwrap();
       toast.success('Login successful!');
       navigate('/dashboard');
     } catch (err) {
@@ -76,11 +76,12 @@ const Login: React.FC = () => {
             <form onSubmit={handleSubmit}>
               <TextField
                 fullWidth
-                label="Username"
+                label="Email"
+                type="email"
                 variant="outlined"
                 margin="normal"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 autoFocus
               />
