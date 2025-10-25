@@ -11,21 +11,36 @@ A comprehensive Hospital Management System Backend API built with Django REST Fr
 
 ## Current State
 
-The application has been successfully set up in the Replit environment and is running on port 5000. All database migrations have been applied, and the development server is operational.
+The HMS application is set up as a **full-stack monorepo** with both backend and frontend running together:
+- **Backend API:** Django REST Framework running on localhost:8000 (internal)
+- **Frontend:** React TypeScript app running on 0.0.0.0:5000 (user-facing webview)
+- All database migrations applied and operational
 
 ## Recent Changes (October 25, 2025)
 
-- Installed Python 3.11 and all project dependencies
+**Backend:**
+- Installed Python 3.11 and all Django dependencies
 - Configured Django settings for Replit environment with environment variable support
 - Made settings production-ready with environment-based configuration
 - Created fresh database migrations and applied them
-- Set up development workflow running on port 5000
+- Set up backend workflow running on localhost:8000
 - Configured deployment with Gunicorn
 - Added dummy cache fallback when Redis is not available
 
+**Frontend:**
+- Built complete React TypeScript application in frontend/ directory
+- Installed Node.js 20 and all React dependencies
+- Configured Redux Toolkit for state management
+- Implemented JWT authentication with auto-refresh
+- Created Patient module with list and details pages
+- Built Dashboard with statistics
+- Configured Material-UI theme
+- Set up protected routing system
+- Frontend running on 0.0.0.0:5000 with proxy to backend
+
 ## Project Architecture
 
-### Technology Stack
+### Backend Technology Stack
 
 - **Framework:** Django 5.2.3 with Django REST Framework 3.15.2
 - **Authentication:** JWT (JSON Web Tokens) with djangorestframework-simplejwt
@@ -34,6 +49,18 @@ The application has been successfully set up in the Replit environment and is ru
 - **Task Queue:** Celery (optional, for background jobs)
 - **File Uploads:** Pillow for image processing
 - **CORS:** django-cors-headers (configured for all origins in dev)
+
+### Frontend Technology Stack
+
+- **Framework:** React 18.2 with TypeScript 4.9
+- **State Management:** Redux Toolkit 2.0
+- **UI Library:** Material-UI (MUI) v5
+- **Routing:** React Router v6
+- **Forms:** React Hook Form + Yup
+- **API Client:** Axios with JWT interceptors
+- **Charts:** Recharts
+- **Notifications:** React Toastify
+- **Styling:** Emotion (CSS-in-JS)
 
 ### Core Modules
 

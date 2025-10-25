@@ -21,7 +21,7 @@ const initialState: PatientsState = {
 
 export const fetchPatients = createAsyncThunk(
   'patients/fetchAll',
-  async (params?: { page?: number; search?: string }, { rejectWithValue }) => {
+  async (params: { page?: number; search?: string } | undefined = undefined, { rejectWithValue }) => {
     try {
       return await patientsAPI.getAll(params);
     } catch (error: any) {

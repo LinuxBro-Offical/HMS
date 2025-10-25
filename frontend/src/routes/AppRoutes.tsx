@@ -5,6 +5,7 @@ import Login from '../pages/auth/Login';
 import Dashboard from '../pages/dashboard/Dashboard';
 import PatientsPage from '../pages/patients/PatientsPage';
 import PatientDetailsPage from '../pages/patients/PatientDetailsPage';
+import AddPatientPage from '../pages/patients/AddPatientPage';
 import AppointmentsPage from '../pages/appointments/AppointmentsPage';
 
 const AppRoutes: React.FC = () => {
@@ -24,6 +25,14 @@ const AppRoutes: React.FC = () => {
         element={
           <PrivateRoute>
             <PatientsPage />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/patients/new"
+        element={
+          <PrivateRoute>
+            <AddPatientPage />
           </PrivateRoute>
         }
       />
