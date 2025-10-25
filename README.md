@@ -291,4 +291,4 @@ For support and questions:
 
 ---
 
-**Built with ❤️ for Healthcare Providers**
+Built with ❤️ by Ananthu (Linux Bro)
